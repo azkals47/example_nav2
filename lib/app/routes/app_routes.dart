@@ -10,9 +10,9 @@ abstract class Routes {
   static const SETTINGS = _Paths.HOME + _Paths.SETTINGS;
 
   static const PRODUCTS = _Paths.HOME + _Paths.PRODUCTS;
-  static String PRODUCT_DETAILS(String productId) => '$PRODUCTS/$productId';
+  static String PRODUCT_DETAILS({required String id}) => '$PRODUCTS/$id';
 
-  static String PRODUCT_REVIEW(String productId) => '$PRODUCTS/$productId' + _Paths.PRODUCT_REVIEW;
+  static String PRODUCT_REVIEW({required String id}) => '${PRODUCT_DETAILS(id: id)}/review';
 
   static const LOGIN = _Paths.LOGIN;
   static String LOGIN_THEN(String afterSuccessfulLogin) =>
@@ -30,10 +30,14 @@ abstract class _Paths {
   static const PRODUCTS = '/products';
   static const PROFILE = '/profile';
   static const SETTINGS = '/settings';
-  static const PRODUCT_DETAILS = '/:productId';
-  static const PRODUCT_REVIEW = '/product-review';
+
+  static const PRODUCT_DETAILS = '/:id';
+  static const PRODUCT_REVIEW = '/review';
+
   static const LOGIN = '/login';
+
   static const DASHBOARD = '/dashboard';
+
   static const DASHBOARD_DETAIL = '/dashboard-detail';
   static const DASHBOARD_REVIEW = '/dashboard-review';
 }

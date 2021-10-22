@@ -21,15 +21,15 @@ class ProductDetailsView extends GetWidget<ProductDetailsController> {
               'ProductDetailsView is working',
               style: TextStyle(fontSize: 20),
             ),
-            Text('ProductId: ${controller.productId}'),
+            Text('ProductId: ${controller.id}'),
 
             MaterialButton(
               child: Text(
-                'Go to FORGOT !!',
+                'Go to PRODUCT REVIEW !!',
                 style: TextStyle(color: Colors.blue, fontSize: 20),
               ),
               onPressed: () {
-                Get.rootDelegate.toNamed(Routes.PRODUCT_REVIEW(controller.productId));
+                Get.rootDelegate.toNamed(Routes.PRODUCT_REVIEW(id: controller.id));
               },
             ),
           ],

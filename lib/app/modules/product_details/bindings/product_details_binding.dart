@@ -7,7 +7,7 @@ class ProductDetailsBinding extends Bindings {
   void dependencies() {
     Get.create<ProductDetailsController>(
       () => ProductDetailsController(
-        Get.parameters['productId'] ?? '',
+        Get.parameters['id'] ?? '',
       ),
     );
   }
